@@ -1,0 +1,1795 @@
+        .doctor-profile {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 246, 255, 0.9) 100%);
+            padding: 3rem;<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakthi Dental Clinic - Specialized Dental Care for Women, Children & Families</title>
+    <meta name="description" content="Expert dental care for women, children and families. 20+ years experience, modern facilities, comprehensive treatments from preventive to advanced dentistry.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #8B7AB8;
+            --secondary-color: #A594C9;
+            --accent-color: #E8E2F7;
+            --text-dark: #2C2C54;
+            --text-light: #6C7293;
+            --white: #FFFFFF;
+            --light-bg: #F8F6FF;
+            --success: #4CAF50;
+            --warning: #FF9800;
+            --gradient-primary: linear-gradient(135deg, #8B7AB8 0%, #A594C9 50%, #C9B8E8 100%);
+            --gradient-secondary: linear-gradient(135deg, #E8E2F7 0%, #F8F6FF 100%);
+            --gradient-accent: linear-gradient(135deg, rgba(139, 122, 184, 0.1) 0%, rgba(200, 190, 231, 0.1) 100%);
+            --gradient-card: linear-gradient(145deg, #ffffff 0%, #f8f6ff 100%);
+            --gradient-button: linear-gradient(135deg, #8B7AB8 0%, #6B5B9B 100%);
+            --gradient-hover: linear-gradient(135deg, #A594C9 0%, #8B7AB8 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 246, 255, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 30px rgba(139, 122, 184, 0.15);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--accent-color) 50%, #F0EBFF 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 122, 184, 0.15) 0%, rgba(200, 190, 231, 0.08) 40%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(165, 148, 201, 0.1) 0%, transparent 50%);
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideUp 0.8s ease-out 0.4s both;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-button);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(139, 122, 184, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            background: var(--gradient-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 122, 184, 0.5);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 246, 255, 0.9) 100%);
+            color: var(--primary-color);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            margin: -2px;
+            border-radius: inherit;
+            background: var(--gradient-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gradient-button);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 122, 184, 0.3);
+        }
+
+        /* Welcome Banner */
+        .welcome-banner {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 246, 255, 0.9) 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .welcome-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-accent);
+            z-index: 1;
+        }
+
+        .welcome-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .welcome-banner h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .welcome-banner p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Why Choose Us */
+        .why-choose-us {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #F0EBFF 50%, var(--accent-color) 100%);
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .why-choose-us::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(139,122,184,0.05)"/><circle cx="75" cy="75" r="1" fill="rgba(165,148,201,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: var(--gradient-card);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 35px rgba(139, 122, 184, 0.15);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 122, 184, 0.05) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .feature-card:hover::after {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 45px rgba(139, 122, 184, 0.25);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .feature-icon::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(139, 122, 184, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Treatments Section */
+        .treatments {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 246, 255, 0.7) 100%);
+            position: relative;
+        }
+
+        .treatments::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(139, 122, 184, 0.02) 50%, transparent 70%);
+        }
+
+        .treatments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .treatment-card {
+            background: linear-gradient(145deg, rgba(248, 246, 255, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(139, 122, 184, 0.1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .treatment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(139, 122, 184, 0.02) 0%, rgba(165, 148, 201, 0.02) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .treatment-card:hover::before {
+            opacity: 1;
+        }
+
+        .treatment-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 12px 35px rgba(139, 122, 184, 0.2);
+            border-color: rgba(139, 122, 184, 0.2);
+        }
+
+        .treatment-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .treatment-icon {
+            font-size: 2rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .treatment-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .treatment-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .treatment-list li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .treatment-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #F0EBFF 50%, var(--accent-color) 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(139, 122, 184, 0.05) 0%, transparent 60%);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 4rem auto 0;
+            position: relative;
+        }
+
+        .testimonial {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 246, 255, 0.95) 100%);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 35px rgba(139, 122, 184, 0.15);
+            margin: 0 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .testimonial-rating {
+            color: var(--warning);
+            margin-bottom: 1rem;
+        }
+
+        /* Facilities */
+        .facilities {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 246, 255, 0.7) 100%);
+            position: relative;
+        }
+
+        .facilities::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 40%, rgba(139, 122, 184, 0.03) 60%, transparent 80%);
+        }
+
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .facility-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .facility-icon {
+            font-size: 3rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .facility-icon::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: radial-gradient(circle, rgba(139, 122, 184, 0.08) 0%, transparent 60%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .facility-item h4 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .facility-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #F0EBFF 50%, var(--accent-color) 100%);
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(139,122,184,0.06)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            opacity: 0.4;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .doctor-profile {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(139, 122, 184, 0.1);
+            text-align: center;
+        }
+
+        .doctor-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary-color);
+        }
+
+        .doctor-profile h3 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .doctor-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .vision-mission h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .vision-mission p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        /* Team */
+        .team {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .team-member {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        .team-member h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--light-bg);
+            padding: 80px 0;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(139, 122, 184, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid rgba(139, 122, 184, 0.2);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(139, 122, 184, 0.1);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 0.25rem;
+        }
+
+        .contact-details h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* FAQs */
+        .faqs {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 4rem auto 0;
+        }
+
+        .faq-item {
+            background: var(--light-bg);
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.5rem;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(139, 122, 184, 0.05);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--white);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .treatments-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+
+            .feature-card,
+            .treatment-card,
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--accent-color);
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border: none;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <i class="fas fa-tooth"></i>
+                Sakthi Dental Clinic
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
+                <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
+                <li><a href="#treatments" onclick="scrollToSection('treatments')">Treatments</a></li>
+                <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
+                <li><a href="#faqs" onclick="scrollToSection('faqs')">FAQs</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Specialized Dental Care for Women, Children & Families</h1>
+                <p class="hero-subtitle">Experience compassionate, comprehensive dental care with over 20 years of expertise. We create healthy smiles for every generation.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary" onclick="scrollToSection('contact')">
+                        <i class="fas fa-calendar-check"></i>
+                        Fix an Appointment
+                    </a>
+                    <a href="tel:+91-9876543210" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i>
+                        Emergency Support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Banner -->
+    <section class="welcome-banner">
+        <div class="container">
+            <div class="welcome-content">
+                <h2>Welcome to Your Trusted Dental Care Partner</h2>
+                <p>At Sakthi Dental Clinic, we believe every smile tells a story. With over two decades of dedicated service, we combine advanced dental technology with gentle, personalized care to ensure your family's oral health journey is comfortable and successful. Trust us to be your partners in creating and maintaining beautiful, healthy smiles for life.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose Sakthi Dental Clinic?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3>All-in-One Care</h3>
+                    <p>From preventive cleanings to advanced procedures, we provide comprehensive dental services under one roof, making it convenient for your entire family.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Experienced Doctors</h3>
+                    <p>Our team of 9 specialized dental professionals brings decades of combined experience, ensuring expert care for every dental need.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Patient-Centric Approach</h3>
+                    <p>We prioritize your comfort and understanding, taking time to explain procedures and create a welcoming environment for all ages.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Tech-Driven Solutions</h3>
+                    <p>State-of-the-art equipment and modern techniques ensure precise diagnoses, effective treatments, and superior outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Treatments -->
+    <section id="treatments" class="treatments">
+        <div class="container">
+            <h2 class="section-title">Our Core Treatments</h2>
+            <div class="treatments-grid">
+                <div class="treatment-card">
+                    <div class="treatment-header">
+                        <div class="treatment-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Basic & Preventive Care</h3>
+                    </div>
+                    <ul class="treatment-list">
+                        <li>Professional Dental Cleaning</li>
+                        <li>Tooth-Colored Fillings</li>
+                        <li>Simple & Surgical Extractions</li>
+                        <li>Fluoride Treatments</li>
+                        <li>Oral Health Screenings</li>
+                    </ul>
+                </div>
+                <div class="treatment-card">
+                    <div class="treatment-header">
+                        <div class="treatment-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h3>Advanced Procedures</h3>
+                    </div>
+                    <ul class="treatment-list">
+                        <li>Dental Implants</li>
+                        <li>Root Canal Therapy</li>
+                        <li>Wisdom Tooth Extraction</li>
+                        <li>Flap Surgery</li>
+                        <li>Bone Grafting</li>
+                    </ul>
+                </div>
+                <div class="treatment-card">
+                    <div class="treatment-header">
+                        <div class="treatment-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Cosmetic Dentistry</h3>
+                    </div>
+                    <ul class="treatment-list">
+                        <li>Teeth Whitening</li>
+                        <li>Porcelain Veneers</li>
+                        <li>Clear Aligners</li>
+                        <li>Smile Makeover</li>
+                        <li>Composite Bonding</li>
+                    </ul>
+                </div>
+                <div class="treatment-card">
+                    <div class="treatment-header">
+                        <div class="treatment-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3>Pediatric Care</h3>
+                    </div>
+                    <ul class="treatment-list">
+                        <li>Children's Dental Checkups</li>
+                        <li>Fluoride Applications</li>
+                        <li>Dental Sealants</li>
+                        <li>Space Maintainers</li>
+                        <li>Early Orthodontic Assessment</li>
+                    </ul>
+                </div>
+                <div class="treatment-card">
+                    <div class="treatment-header">
+                        <div class="treatment-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h3>Prosthetics & Restoration</h3>
+                    </div>
+                    <ul class="treatment-list">
+                        <li>Complete & Partial Dentures</li>
+                        <li>Dental Bridges</li>
+                        <li>Crown & Cap Procedures</li>
+                        <li>Implant-Supported Prosthetics</li>
+                    </ul>
+                </div>
+                <div class="treatment-card">
+                    <div class="treatment-header">
+                        <div class="treatment-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Laser Dentistry & Orthodontics</h3>
+                    </div>
+                    <ul class="treatment-list">
+                        <li>Laser Gum Treatment</li>
+                        <li>Traditional Metal Braces</li>
+                        <li>Ceramic Braces</li>
+                        <li>Laser-Assisted Procedures</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#contact" class="btn btn-primary" onclick="scrollToSection('contact')">
+                    <i class="fas fa-list"></i>
+                    View Full Treatment List
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Patients Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial" id="testimonial1">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Dr. Anupriya and her team provided exceptional care for my daughter's first dental visit. The child-friendly approach made all the difference. Highly recommended for families!"</p>
+                    <div class="testimonial-author">- Priya Sharma, Mother of 2</div>
+                </div>
+                <div class="testimonial" id="testimonial2" style="display: none;">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The dental implant procedure was seamless and painless. The entire team's professionalism and modern facilities gave me complete confidence in my treatment."</p>
+                    <div class="testimonial-author">- Rajesh Kumar, IT Professional</div>
+                </div>
+                <div class="testimonial" id="testimonial3" style="display: none;">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"As someone with dental anxiety, I was amazed by how comfortable and relaxed I felt throughout my root canal treatment. The care and attention to detail were outstanding."</p>
+                    <div class="testimonial-author">- Lakshmi Reddy, Teacher</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinic Facilities -->
+    <section class="facilities">
+        <div class="container">
+            <h2 class="section-title">Our Modern Facilities</h2>
+            <div class="facilities-grid">
+                <div class="facility-item">
+                    <div class="facility-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h4>Sterilization Center</h4>
+                    <p>Advanced autoclave systems ensuring 100% sterile instruments</p>
+                </div>
+                <div class="facility-item">
+                    <div class="facility-icon">
+                        <i class="fas fa-x-ray"></i>
+                    </div>
+                    <h4>Digital X-Ray</h4>
+                    <p>Low-radiation digital imaging for precise diagnosis</p>
+                </div>
+                <div class="facility-item">
+                    <div class="facility-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h4>Comfortable Seating</h4>
+                    <p>Ergonomic dental chairs with entertainment systems</p>
+                </div>
+                <div class="facility-item">
+                    <div class="facility-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h4>Parking Facility</h4>
+                    <p>Convenient on-site parking for all patients</p>
+                </div>
+                <div class="facility-item">
+                    <div class="facility-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h4>Child-Friendly Area</h4>
+                    <p>Dedicated play zone and pediatric treatment rooms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Dr. Anupriya & Our Clinic</h2>
+            <div class="about-content">
+                <div class="doctor-profile">
+                    <div class="doctor-image">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Dr. Anupriya</h3>
+                    <p class="doctor-title">Chief Dental Surgeon & Founder</p>
+                    <p>With over 20 years of dedicated practice in women and children's dental care, Dr. Anupriya has transformed countless smiles and built a reputation for gentle, comprehensive dental treatment. Her expertise spans from routine cleanings to complex surgical procedures, always prioritizing patient comfort and long-term oral health.</p>
+                </div>
+                <div class="vision-mission">
+                    <h3>Our Vision</h3>
+                    <p>To be the most trusted dental care provider for families, creating healthy smiles that last a lifetime through compassionate, innovative, and comprehensive dental services.</p>
+                    <h3>Our Mission</h3>
+                    <p>We are committed to delivering exceptional dental care with a focus on women and children, using advanced technology and personalized treatment plans. We strive to create a comfortable, anxiety-free environment where every patient feels valued and receives the highest standard of oral healthcare.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">Meet Our Expert Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h4>Dr. Anupriya</h4>
+                    <p>Chief Dental Surgeon & Oral Medicine Specialist</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h4>Dr. Srinivas</h4>
+                    <p>Endodontist & Root Canal Specialist</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h4>Dr. Meera</h4>
+                    <p>Pediatric Dentist</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h4>Dr. Ramesh</h4>
+                    <p>Oral & Maxillofacial Surgeon</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h4>Dr. Kavitha</h4>
+                    <p>Cosmetic Dentist</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-braille"></i>
+                    </div>
+                    <h4>Dr. Suresh</h4>
+                    <p>Orthodontist</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h4>Dr. Lalitha</h4>
+                    <p>Prosthodontist</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h4>Dr. Venkat</h4>
+                    <p>Periodontist</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4>Dr. Sowmya</h4>
+                    <p>Laser Dentistry Specialist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Book Your Appointment</h3>
+                    <form id="appointmentForm" onsubmit="submitForm(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message / Preferred Treatment</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your dental concerns or preferred appointment time..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Our Location</h4>
+                            <p>#123, Gandhi Road, Near City Hospital<br>Chengalpattu, Tamil Nadu - 603001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone Numbers</h4>
+                            <p>+91-9876543210<br>+91-8765432109</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>info@sakthidentalclinic.com<br>appointments@sakthidentalclinic.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Working Hours</h4>
+                            <p>Mon - Sat: 9:00 AM - 8:00 PM<br>Sunday: 10:00 AM - 2:00 PM<br>Emergency: 24/7</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section id="faqs" class="faqs">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How often should I visit the dentist for checkups?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        We recommend visiting every 6 months for routine cleanings and checkups. However, some patients may need more frequent visits based on their oral health condition. Regular visits help prevent serious dental problems and maintain optimal oral health.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What age should children first visit the dentist?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Children should have their first dental visit by their first birthday or within 6 months of their first tooth appearing. Early visits help establish good oral hygiene habits and allow us to monitor proper tooth development.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Are dental X-rays safe during pregnancy?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Our digital X-rays use very low radiation levels and are generally safe during pregnancy when proper shielding is used. However, we typically postpone non-emergency X-rays until after delivery unless absolutely necessary for treatment.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How long does a root canal treatment take?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Most root canal treatments can be completed in 1-3 visits, depending on the complexity of the case. Each appointment typically lasts 60-90 minutes. Our advanced techniques ensure efficient treatment with minimal discomfort.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What payment methods do you accept?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        We accept cash, credit/debit cards, UPI payments, and bank transfers. We also offer flexible payment plans for extensive treatments and work with most dental insurance providers.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Do you provide emergency dental services?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, we provide 24/7 emergency dental services for severe pain, trauma, or urgent dental issues. Call our emergency line and we'll arrange immediate care to address your dental emergency.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How long do dental implants last?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        With proper care and maintenance, dental implants can last 20-25 years or even a lifetime. Success depends on good oral hygiene, regular dental visits, and avoiding habits like smoking that can affect healing.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What should I expect during my first visit?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Your first visit includes a comprehensive oral examination, digital X-rays if needed, discussion of your dental history and concerns, and a personalized treatment plan. We'll also provide oral hygiene instructions and answer all your questions.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Is teeth whitening safe for everyone?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Professional teeth whitening is safe for most adults. However, it's not recommended for pregnant/nursing women, children under 16, or people with certain dental conditions. We'll evaluate your suitability during consultation.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How can I manage dental anxiety?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        We specialize in anxiety-free dentistry using gentle techniques, sedation options, and a calming environment. Communicate your concerns with us, and we'll customize your treatment to ensure maximum comfort throughout your visit.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What's included in a dental cleaning?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Professional cleaning includes plaque and tartar removal, tooth polishing, fluoride treatment, oral examination, and personalized oral hygiene instructions. We use advanced tools to ensure thorough cleaning while maintaining your comfort.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How soon after extraction can I get an implant?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Timing varies based on individual healing and bone condition. Immediate implants can sometimes be placed right after extraction, while others may require 3-6 months of healing. We'll determine the best timeline during your consultation.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Do you offer treatment plans for extensive dental work?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, we create comprehensive treatment plans that prioritize urgent needs while considering your budget and timeline. We offer flexible payment options and can phase treatments to make extensive dental work more manageable.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What makes your clinic especially good for women and children?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        We understand the unique dental needs of women through different life stages and specialize in pediatric care. Our gentle approach, child-friendly environment, and expertise in hormonal effects on oral health make us ideal for families.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <section id="privacy" style="padding: 80px 0; background: var(--light-bg); display: none;">
+        <div class="container">
+            <h2 class="section-title">Privacy Policy</h2>
+            <div style="max-width: 800px; margin: 4rem auto 0; background: var(--white); padding: 3rem; border-radius: 15px; box-shadow: 0 5px 25px rgba(139, 122, 184, 0.1);">
+                <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 2rem;">
+                    At Sakthi Dental Clinic, we are committed to protecting your privacy and maintaining the confidentiality of your personal and medical information. This Privacy Policy explains how we collect, use, and protect your information.
+                </p>
+                
+                <h3 style="color: var(--text-dark); margin: 2rem 0 1rem;">Information We Collect</h3>
+                <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 1.5rem;">
+                    We collect personal information including name, contact details, medical history, dental records, insurance information, and treatment records necessary for providing quality dental care.
+                </p>
+
+                <h3 style="color: var(--text-dark); margin: 2rem 0 1rem;">How We Use Your Information</h3>
+                <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 1.5rem;">
+                    Your information is used solely for providing dental treatment, appointment scheduling, insurance processing, communication regarding your care, and maintaining accurate medical records as required by law.
+                </p>
+
+                <h3 style="color: var(--text-dark); margin: 2rem 0 1rem;">Information Protection</h3>
+                <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 1.5rem;">
+                    We implement strict security measures including encrypted storage, limited access protocols, secure transmission methods, and regular security audits to protect your sensitive information.
+                </p>
+
+                <h3 style="color: var(--text-dark); margin: 2rem 0 1rem;">Information Sharing</h3>
+                <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 1.5rem;">
+                    We do not share your personal information except as required for your treatment, with your explicit consent, for insurance processing, or as mandated by law.
+                </p>
+
+                <h3 style="color: var(--text-dark); margin: 2rem 0 1rem;">Your Rights</h3>
+                <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 1.5rem;">
+                    You have the right to access your records, request corrections, withdraw consent for non-essential communications, and receive information about how your data is used.
+                </p>
+
+                <h3 style="color: var(--text-dark); margin: 2rem 0 1rem;">Contact Us</h3>
+                <p style="color: var(--text-light); line-height: 1.7;">
+                    If you have questions about this Privacy Policy or how we handle your information, please contact us at info@sakthidentalclinic.com or call +91-9876543210.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sakthi Dental Clinic</h3>
+                    <p>Your trusted partner for comprehensive dental care. Specializing in women and children's dental health with over 20 years of experience.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
+                        <li><a href="#about" onclick="scrollToSection('about')">About Us</a></li>
+                        <li><a href="#treatments" onclick="scrollToSection('treatments')">Treatments</a></li>
+                        <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
+                        <li><a href="#faqs" onclick="scrollToSection('faqs')">FAQs</a></li>
+                        <li><a href="#" onclick="showPrivacyPolicy()">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Treatments</h3>
+                    <ul>
+                        <li><a href="#treatments" onclick="scrollToSection('treatments')">Preventive Care</a></li>
+                        <li><a href="#treatments" onclick="scrollToSection('treatments')">Dental Implants</a></li>
+                        <li><a href="#treatments" onclick="scrollToSection('treatments')">Root Canal</a></li>
+                        <li><a href="#treatments" onclick="scrollToSection('treatments')">Cosmetic Dentistry</a></li>
+                        <li><a href="#treatments" onclick="scrollToSection('treatments')">Pediatric Care</a></li>
+                        <li><a href="#treatments" onclick="scrollToSection('treatments')">Orthodontics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> #123, Gandhi Road, Near City Hospital<br>Chengalpattu, Tamil Nadu - 603001</p>
+                    <p><i class="fas fa-phone"></i> +91-9876543210</p>
+                    <p><i class="fas fa-envelope"></i> info@sakthidentalclinic.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9AM-8PM<br>Sunday: 10AM-2
